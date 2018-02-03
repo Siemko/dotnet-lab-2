@@ -30,10 +30,10 @@ namespace Lab2
             var threadMethods = new ThreadMethods();
             Console.WriteLine("Aktualny wątek: {0}", Thread.CurrentThread.ManagedThreadId.ToString());
 
-            var task = Task.Factory.StartNew(() => threadMethods.SlowMethod());
+            var task = Task.Factory.StartNew(ThreadMethods.SlowMethod);
             task.Wait();
 
-            Console.WriteLine(threadMethods.FastMethod());
+            Console.WriteLine(ThreadMethods.FastMethod());
 
             #endregion
 
